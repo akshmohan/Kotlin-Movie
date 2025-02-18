@@ -1,0 +1,38 @@
+[versions]
+agp = "8.8.1" # Using the newer version from the first set
+kotlin = "2.0.0" # Using the newer version from the first set
+coreKtx = "1.13.1" # Renamed and updated to the newer version
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeKtx = "2.8.4" # Updated to the newer version
+activityCompose = "1.9.1" # Updated to the newer version
+composeBom = "2024.06.00" # Updated to the newer version
+compose-constrain-layout = "1.0.1" # Added from the second set
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" } # Updated version ref
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" } # Updated version ref
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Updated version ref
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Updated version ref
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-constraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "compose-constrain-layout" } # Added from the second set
+
+[bundles]
+androidX = ["androidx-core-ktx", "androidx-lifecycle-runtime-ktx"] # Updated to use the new names
+ui = ["androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-activity-compose", "androidx-material3", "androidx-compose-constraint-layout"] # Updated to use the new names
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Added from the first set
+
